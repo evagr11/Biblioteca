@@ -6,6 +6,9 @@
   <a href="https://github.com/evagr11/Biblioteca" target="_blank">
     <img src="https://img.shields.io/badge/Ver_Código-2F6B5E?style=for-the-badge&logo=github&logoColor=white" alt="Ver Código"/>
   </a>
+  <a href="https://github.com/evagr11/Biblioteca/releases/latest" target="_blank">
+    <img src="https://img.shields.io/badge/Descargar_para_Windows-C8963E?style=for-the-badge&logo=windows&logoColor=white" alt="Descargar para Windows"/>
+  </a>
   <a href="https://evagr11.github.io/Biblioteca/" target="_blank">
     <img src="https://img.shields.io/badge/Javadoc-C8963E?style=for-the-badge&logo=openjdk&logoColor=white" alt="Javadoc"/>
   </a>
@@ -159,7 +162,14 @@ Biblioteca/
 
 # 🚀 Cómo Utilizar el Proyecto
 
-### 📋 Requisitos
+### 💻 Descargar para Windows
+
+No hace falta tener Java instalado: la descarga lleva su propia versión.
+
+1. Descarga `MiBiblioteca-windows.zip` de la [última versión](https://github.com/evagr11/Biblioteca/releases/latest) y descomprímelo.
+2. Abre la carpeta `bin` y haz doble clic en `MiBiblioteca.bat` (si el Explorador oculta las extensiones, aparece como `MiBiblioteca`).
+
+### 📋 Requisitos para compilarla
 
 - **JDK 11** o superior
 - **Maven** (o el que trae IntelliJ IDEA)
@@ -173,6 +183,14 @@ mvn clean javafx:run
 ```
 
 En **IntelliJ IDEA** también se puede lanzar desde el panel de Maven: `Plugins → javafx → javafx:run`. Arranca con cinco libros y cinco autores de ejemplo.
+
+### 📦 Generar el zip para Windows
+
+```bash
+mvn clean javafx:jlink
+```
+
+Crea `target/MiBiblioteca-windows.zip`, con la aplicación y un Java reducido para ejecutarla. Se genera para el sistema donde se compila: hecho en Windows, funciona en Windows.
 
 ### 📖 Ver la documentación
 
@@ -188,6 +206,7 @@ En **IntelliJ IDEA** también se puede lanzar desde el panel de Maven: `Plugins 
 - 🌍 **Idiomas del filtro** sacados de los libros, en vez de «Español» e «Inglés» fijos.
 - 🎨 **Estilos en una hoja CSS**, que también cambie el azul por defecto de la fila seleccionada al verde de la app.
 - 📐 **Ventana adaptable**: ahora está pensada para 1180 píxeles de ancho.
+- 📦 **Instalador `.exe`** con icono y acceso en el menú Inicio, con `jpackage`, en vez de abrirla con un `.bat`.
 
 ---
 
