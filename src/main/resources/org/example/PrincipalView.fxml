@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefWidth="1180.0" spacing="16.0" style="-fx-background-color: linear-gradient(to bottom right, #dfe7e3, #cfdcd6); -fx-font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; -fx-font-size: 14px; -fx-text-fill: #1c2b2a;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PrincipalController">
+   <padding>
+      <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+   </padding>
+   <children>
+      <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" spacing="4.0" style="-fx-background-color: #fbfcfb; -fx-background-radius: 999; -fx-border-color: #d6dfda; -fx-border-radius: 999; -fx-padding: 4;">
+         <children>
+            <Label style="-fx-text-fill: #63746f; -fx-padding: 0 8 0 12;" text="Ventana:" />
+            <Button mnemonicParsing="false" onAction="#irPrincipal" style="-fx-background-color: #2f6b5e; -fx-background-radius: 999; -fx-text-fill: white; -fx-padding: 7 16 7 16; -fx-cursor: hand; -fx-font-weight: bold;" text="Principal" />
+            <Button mnemonicParsing="false" onAction="#irLibros" style="-fx-background-color: transparent; -fx-background-radius: 999; -fx-text-fill: #1c2b2a; -fx-padding: 7 16 7 16; -fx-cursor: hand;" text="Administrar libros" />
+            <Button mnemonicParsing="false" onAction="#irAutores" style="-fx-background-color: transparent; -fx-background-radius: 999; -fx-text-fill: #1c2b2a; -fx-padding: 7 16 7 16; -fx-cursor: hand;" text="Administrar autores" />
+         </children>
+      </HBox>
+      <VBox style="-fx-background-color: #fbfcfb; -fx-background-radius: 14; -fx-border-color: #d6dfda; -fx-border-radius: 14; -fx-effect: dropshadow(gaussian, rgba(28,43,42,0.28), 32, 0, 0, 12);" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox alignment="CENTER_LEFT" style="-fx-background-color: #f1f5f3; -fx-background-radius: 14 14 0 0; -fx-border-color: transparent transparent #d6dfda transparent; -fx-padding: 12 18 12 18;">
+               <children>
+                  <Label style="-fx-font-weight: bold;" text="Mi biblioteca" />
+               </children>
+            </HBox>
+            <VBox spacing="16.0" style="-fx-padding: 20;" VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox alignment="BOTTOM_LEFT" spacing="10.0">
+                     <children>
+                        <VBox spacing="4.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #63746f;" text="Buscar libros" />
+                              <TextField style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #d6dfda; -fx-border-radius: 8; -fx-padding: 4 6 4 6;" fx:id="txtBuscar" onKeyReleased="#buscar" promptText="Título o autor" />
+                           </children>
+                        </VBox>
+                        <VBox spacing="4.0">
+                           <children>
+                              <Label style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #63746f;" text="Tipo" />
+                              <ComboBox style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #d6dfda; -fx-border-radius: 8; -fx-padding: 4 6 4 6;" fx:id="cmbTipo" onAction="#buscar" prefWidth="140.0" promptText="Todos">
+                                 <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                       <String fx:value="Todos" />
+                                       <String fx:value="bolsillo" />
+                                       <String fx:value="tapa blanda" />
+                                       <String fx:value="tapa dura" />
+                                    </FXCollections>
+                                 </items>
+                              </ComboBox>
+                           </children>
+                        </VBox>
+                        <VBox spacing="4.0">
+                           <children>
+                              <Label style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #63746f;" text="Idioma" />
+                              <ComboBox style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #d6dfda; -fx-border-radius: 8; -fx-padding: 4 6 4 6;" fx:id="cmbIdioma" onAction="#buscar" prefWidth="140.0" promptText="Todos" />
+                           </children>
+                        </VBox>
+                        <Button fx:id="btnAdminLibros" onAction="#irLibros" mnemonicParsing="false" style="-fx-background-color: #2f6b5e; -fx-border-color: #2f6b5e; -fx-background-radius: 8; -fx-border-radius: 8; -fx-font-weight: bold; -fx-padding: 8 16 8 16; -fx-text-fill: white; -fx-cursor: hand;" text="Administrar libros" />
+                        <Button fx:id="btnAdminAutores" onAction="#irAutores" mnemonicParsing="false" style="-fx-background-color: white; -fx-border-color: #d6dfda; -fx-background-radius: 8; -fx-border-radius: 8; -fx-font-weight: bold; -fx-padding: 8 16 8 16; -fx-text-fill: #1c2b2a; -fx-cursor: hand;" text="Administrar autores" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_LEFT" spacing="20.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <TableView fixedCellSize="38.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #d6dfda; -fx-border-radius: 10; -fx-padding: 0;" fx:id="tblLibros" onMouseClicked="#seleccionarLibro" prefHeight="360.0" HBox.hgrow="ALWAYS">
+                           <columns>
+                              <TableColumn fx:id="colTitulo" prefWidth="230.0" text="Título" />
+                              <TableColumn fx:id="colAutor" prefWidth="190.0" text="Autor" />
+                              <TableColumn fx:id="colAnio" prefWidth="60.0" text="Año" />
+                              <TableColumn fx:id="colUbicacion" prefWidth="170.0" text="Ubicación" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <VBox minWidth="340.0" prefWidth="340.0" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 12; -fx-border-color: #d6dfda; -fx-border-radius: 12; -fx-padding: 20;">
+                           <children>
+                              <Region prefHeight="4.0" prefWidth="48.0" maxWidth="48.0" style="-fx-background-color: #c8963e; -fx-background-radius: 2;" />
+                              <Label fx:id="lblTitulo" style="-fx-font-family: Georgia, 'Times New Roman', serif; -fx-font-size: 22px; -fx-font-weight: bold;" text="Selecciona un libro" wrapText="true" />
+                              <Label fx:id="lblAutor" style="-fx-text-fill: #63746f;" text="" />
+                              <Label fx:id="lblSinopsis" style="-fx-text-fill: #63746f;" text="" wrapText="true" />
+                              <Label fx:id="lblDatos" style="-fx-font-size: 12px; -fx-text-fill: #63746f;" text="" wrapText="true" />
+                              <Label fx:id="lblUbicacion" style="-fx-font-weight: bold;" text="" />
+                              <Button fx:id="btnEditar" onAction="#editarLibro" mnemonicParsing="false" style="-fx-background-color: #2f6b5e; -fx-border-color: #2f6b5e; -fx-background-radius: 8; -fx-border-radius: 8; -fx-font-weight: bold; -fx-padding: 8 16 8 16; -fx-text-fill: white; -fx-cursor: hand;" text="Editar este libro" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox style="-fx-background-color: #f1f5f3; -fx-background-radius: 0 0 14 14; -fx-border-color: #d6dfda transparent transparent transparent; -fx-padding: 9 18 9 18;">
+               <children>
+                  <Label fx:id="lblEstado" style="-fx-font-size: 12px; -fx-text-fill: #63746f;" text="Listo" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>
