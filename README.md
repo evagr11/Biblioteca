@@ -32,26 +32,26 @@
 
 ---
 
-# 🚀 Sobre el Proyecto
+# Sobre el Proyecto
 
 **Mi biblioteca** es una aplicación de escritorio en **JavaFX** para saber qué libros hay en casa y dónde están. Permite añadir, modificar, eliminar y buscar **libros** y **autores**, y consultar la ficha de cada libro.
 
 La hice siguiendo todo el proceso de diseño de una interfaz: **sketch** a mano, **wireframe** y **prototipo navegable** en Figma, vistas con **SceneBuilder** y, al final, modelo y controladores con el patrón **MVC**.
 
-✨ **Características principales:**
+**Características principales:**
 
-- 🔎 **Ventana principal** con buscador por título o autor, filtros de tipo e idioma y la ficha del libro seleccionado.
-- 📚 **Administración de libros**: título, autor, ubicación, edición, páginas, año, idioma, tipo (bolsillo, tapa blanda o tapa dura) y sinopsis.
-- ✍️ **Administración de autores** con fechas de nacimiento y fallecimiento (`DatePicker`) y la lista de sus libros.
-- 🗑️ **Confirmación antes de eliminar** en una ventana modal, para libros y para autores.
-- ⚠️ **Validaciones**: campos obligatorios con asterisco y errores en rojo que explican qué corregir; si las páginas o el año no son números, no se cierra la app.
-- 🔗 **Relación muchos a muchos** entre libros y autores: al eliminar un autor, desaparece también de sus libros.
-- 🎨 **Estilo propio**: verde sereno, detalles dorados y la misma estructura en las tres ventanas.
-- 📖 **Javadoc** en todas las clases y métodos, publicado en [GitHub Pages](https://evagr11.github.io/Biblioteca/).
+- **Ventana principal** con buscador por título o autor, filtros de tipo e idioma y la ficha del libro seleccionado.
+- **Administración de libros**: título, autor, ubicación, edición, páginas, año, idioma, tipo (bolsillo, tapa blanda o tapa dura) y sinopsis.
+- **Administración de autores** con fechas de nacimiento y fallecimiento (`DatePicker`) y la lista de sus libros.
+- **Confirmación antes de eliminar** en una ventana modal, para libros y para autores.
+- **Validaciones**: campos obligatorios con asterisco y errores en rojo que explican qué corregir; si las páginas o el año no son números, no se cierra la app.
+- **Relación muchos a muchos** entre libros y autores: al eliminar un autor, desaparece también de sus libros.
+- **Estilo propio**: verde sereno, detalles dorados y la misma estructura en las tres ventanas.
+- **Javadoc** en todas las clases y métodos, publicado en [GitHub Pages](https://evagr11.github.io/Biblioteca/).
 
 ---
 
-# 🧠 Contexto del Proyecto
+# Contexto del Proyecto
 
 Es una práctica de la asignatura **Desarrollo de Interfaces** de 2º de **DAM**, hecha en cuatro partes:
 
@@ -70,7 +70,7 @@ Toda la práctica está explicada en la [documentación en PDF](documentacion/Mi
 
 ---
 
-# 🎨 Del boceto a la aplicación
+# Del boceto a la aplicación
 
 <table align="center">
   <tr>
@@ -101,7 +101,7 @@ Toda la práctica está explicada en la [documentación en PDF](documentacion/Mi
 
 ---
 
-# 🛠️ Stack Tecnológico
+# Stack Tecnológico
 
 <p align="center">
   <img src="https://img.shields.io/badge/Java_11-1C2B2A?style=for-the-badge&logo=openjdk&logoColor=white"/>
@@ -127,7 +127,7 @@ Toda la práctica está explicada en la [documentación en PDF](documentacion/Mi
 
 ---
 
-# 📂 Estructura del Proyecto
+# Estructura del Proyecto
 
 ```bash
 Biblioteca/
@@ -160,21 +160,21 @@ Biblioteca/
 
 ---
 
-# 🚀 Cómo Utilizar el Proyecto
+# Cómo Utilizar el Proyecto
 
-### 💻 Descargar para Windows
+### Descargar para Windows
 
 No hace falta tener Java instalado: la descarga lleva su propia versión.
 
 1. Descarga `MiBiblioteca-windows.zip` de la [última versión](https://github.com/evagr11/Biblioteca/releases/latest) y descomprímelo.
 2. Abre la carpeta `bin` y haz doble clic en `MiBiblioteca.bat` (si el Explorador oculta las extensiones, aparece como `MiBiblioteca`).
 
-### 📋 Requisitos para compilarla
+### Requisitos para compilarla
 
 - **JDK 11** o superior
 - **Maven** (o el que trae IntelliJ IDEA)
 
-### ▶️ Ejecutar la aplicación
+### Ejecutar la aplicación
 
 ```bash
 git clone https://github.com/evagr11/Biblioteca.git
@@ -184,7 +184,7 @@ mvn clean javafx:run
 
 En **IntelliJ IDEA** también se puede lanzar desde el panel de Maven: `Plugins → javafx → javafx:run`. Arranca con cinco libros y cinco autores de ejemplo.
 
-### 📦 Generar el zip para Windows
+### Generar el zip para Windows
 
 ```bash
 mvn clean javafx:jlink
@@ -192,21 +192,12 @@ mvn clean javafx:jlink
 
 Crea `target/MiBiblioteca-windows.zip`, con la aplicación y un Java reducido para ejecutarla. Se genera para el sistema donde se compila: hecho en Windows, funciona en Windows.
 
-### 📖 Ver la documentación
+### Ver la documentación
 
 - **Javadoc** online en **[evagr11.github.io/Biblioteca](https://evagr11.github.io/Biblioteca/)**, o abriendo `docs/index.html` en el navegador.
 - **Memoria de la práctica** en [`documentacion/Mi_biblioteca.pdf`](documentacion/Mi_biblioteca.pdf).
 
 ---
-
-# 🎯 Mejoras futuras
-
-- 💾 **Guardar los datos** en un archivo o en una base de datos; ahora están en memoria y se pierden al cerrar.
-- 👥 **Varios autores por libro** desde el formulario: el modelo ya los admite, pero el desplegable solo deja elegir uno.
-- 🌍 **Idiomas del filtro** sacados de los libros, en vez de «Español» e «Inglés» fijos.
-- 🎨 **Estilos en una hoja CSS**, que también cambie el azul por defecto de la fila seleccionada al verde de la app.
-- 📐 **Ventana adaptable**: ahora está pensada para 1180 píxeles de ancho.
-- 📦 **Instalador `.exe`** con icono y acceso en el menú Inicio, con `jpackage`, en vez de abrirla con un `.bat`.
 
 ---
 
